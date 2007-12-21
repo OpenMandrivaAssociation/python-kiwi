@@ -10,6 +10,7 @@ Release: %{release}
 Source0: http://ftp.gnome.org/pub/GNOME/sources/kiwi/%{oname}-%{version}.tar.bz2
 License: LGPL
 Group: Development/Python
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 Url: http://www.async.com.br/projects/
 BuildRequires: pygtk2.0-devel
