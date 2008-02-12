@@ -17,7 +17,6 @@ BuildRequires: pygtk2.0-devel
 Requires: pygtk2.0-libglade
 
 %description
-
 kiwi offers a set of enhanced widgets for
 Python based on PyGTK. It also includes a framework designed to make
 creating Python applications using PyGTK and libglade much
