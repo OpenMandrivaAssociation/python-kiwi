@@ -1,6 +1,6 @@
 %define oname kiwi
 %define name python-kiwi
-%define version 1.9.25
+%define version 1.9.26
 %define release %mkrel 1
 
 Summary: A framework and a set of enhanced widgets based on PyGTK
@@ -43,6 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc installed-docs/*
 %_bindir/*
 %py_puresitedir/*
+%py_libdir/dist-packages
 %_datadir/gazpacho/
 %_datadir/%oname
 
