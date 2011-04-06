@@ -1,13 +1,13 @@
 %define oname kiwi
 %define name python-kiwi
-%define version 1.9.26
+%define version 1.9.27
 %define release %mkrel 2
 
 Summary: A framework and a set of enhanced widgets based on PyGTK
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://ftp.gnome.org/pub/GNOME/sources/kiwi/%{oname}-%{version}.tar.bz2
+Source0: kiwi-1.9.27.tar.gz
 License: LGPL
 Group: Development/Python
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
