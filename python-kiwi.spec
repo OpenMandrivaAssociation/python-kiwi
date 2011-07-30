@@ -1,7 +1,7 @@
 %define oname kiwi
 %define name python-kiwi
 %define version 1.9.29
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: A framework and a set of enhanced widgets based on PyGTK
 Name: %{name}
