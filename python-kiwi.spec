@@ -7,11 +7,10 @@ Summary: A framework and a set of enhanced widgets based on PyGTK
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://download.gnome.org/sources/%{oname}/1.9/%{oname}-%{version}.tar.bz2
-License: LGPL
+Source0: http://download.gnome.org/sources/%{oname}/1.9/%{oname}-%{version}.tar.xz
+License: LGPLv2+
 Group: Development/Python
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch: noarch
 Url: http://www.async.com.br/projects/kiwi/
 BuildRequires: pygtk2.0-devel
 Requires: pygtk2.0-libglade
@@ -37,12 +36,16 @@ useful for reference when writing software using Kiwi.
 sed -i -e 's|share/doc/kiwi|share/doc/%{name}-%{version}|' setup.py
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" python setup.py build
+python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 python setup.py install -O1 --skip-build --root=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT%{_defaultdocdir}
+%if %_lib != lib
+mkdir -p %buildroot%_libdir
+mv %buildroot%_prefix/lib/glade3 %buildroot%_libdir
+%endif
 
 %find_lang %oname
 
@@ -53,11 +56,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS COPYING README NEWS
 %{_bindir}/*
-%{_libdir}/python*/site-packages/*.egg-info
+%{py_puresitedir}/*.egg-info
+#gw this dir is arch-dependant:
 %{_libdir}/glade3/*
 %{_datadir}/glade3/*
 %_datadir/%oname
-%{python_sitelib}/kiwi
+%{py_puresitedir}/kiwi
 
 %files docs
 %defattr(-,root,root,-)
