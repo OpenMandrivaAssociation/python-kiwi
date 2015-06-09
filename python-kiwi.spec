@@ -14,7 +14,7 @@ Group:   Development/Python
 Url:     http://www.async.com.br/projects/kiwi/
 BuildRequires: pkgconfig(python2)
 BuildRequires: pygtk2.0-devel
-BuildRequires: python-distribute
+BuildRequires: python2-setuptools
 Requires: pygtk2.0-libglade
 
 %description
