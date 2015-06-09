@@ -12,6 +12,7 @@ Source0: https://pypi.python.org/packages/source/k/kiwi-gtk/kiwi-gtk-%{version}.
 License: LGPLv2+
 Group:   Development/Python
 Url:     http://www.async.com.br/projects/kiwi/
+BuildRequires: pkgconfig(python2)
 BuildRequires: pygtk2.0-devel
 BuildRequires: python-distribute
 Requires: pygtk2.0-libglade
@@ -37,10 +38,10 @@ useful for reference when writing software using Kiwi.
 sed -i -e 's|share/doc/kiwi|share/doc/%{name}-%{version}|' setup.py
 
 %build
-python setup.py build
+%{__python2} setup.py build
 
 %install
-python setup.py install -O1 --skip-build --root=%{buildroot}
+%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 %if %{_lib} != lib
 mkdir -p %{buildroot}%{_libdir}
@@ -54,11 +55,11 @@ mv %{buildroot}%{_prefix}/lib/glade3 %{buildroot}%{_libdir}
 %files -f %{oname}.lang
 %doc AUTHORS COPYING README NEWS
 %{_bindir}/*
-%{py_puresitedir}/*.egg-info
+%{py2_puresitedir}/*.egg-info
 #gw this dir is arch-dependant:
 %{_libdir}/glade3/*
 %{_datadir}/glade3/*
-%{py_puresitedir}/kiwi
+%{py2_puresitedir}/kiwi
 
 %files docs
 %doc COPYING doc/* examples
