@@ -7,14 +7,14 @@
 Summary: A framework and a set of enhanced widgets based on PyGTK
 Name:    python-kiwi
 Version: 1.9.40
-Release: 1
+Release: 0.1
 Source0: https://pypi.python.org/packages/source/k/kiwi-gtk/kiwi-gtk-%{version}.tar.gz
 License: LGPLv2+
 Group:   Development/Python
 Url:     http://www.async.com.br/projects/kiwi/
 BuildRequires: pkgconfig(python2)
 BuildRequires: pygtk2.0-devel
-BuildRequires: python2-setuptools
+BuildRequires: python-setuptools
 Requires: pygtk2.0-libglade
 
 %description
@@ -38,10 +38,10 @@ useful for reference when writing software using Kiwi.
 sed -i -e 's|share/doc/kiwi|share/doc/%{name}-%{version}|' setup.py
 
 %build
-%{__python2} setup.py build
+%{__python} setup.py build
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+%{__python} setup.py install -O1 --skip-build --root=%{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 %if %{_lib} != lib
 mkdir -p %{buildroot}%{_libdir}
@@ -55,11 +55,11 @@ mv %{buildroot}%{_prefix}/lib/glade3 %{buildroot}%{_libdir}
 %files -f %{oname}.lang
 %doc AUTHORS COPYING README NEWS
 %{_bindir}/*
-%{py2_puresitedir}/*.egg-info
+%{py_puresitedir}/*.egg-info
 #gw this dir is arch-dependant:
 %{_libdir}/glade3/*
 %{_datadir}/glade3/*
-%{py2_puresitedir}/kiwi
+%{py_puresitedir}/kiwi
 
 %files docs
 %doc COPYING doc/* examples
