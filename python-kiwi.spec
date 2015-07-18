@@ -37,6 +37,10 @@ useful for reference when writing software using Kiwi.
 %setup -q -n %{oname}-gtk-%{version}
 sed -i -e 's|share/doc/kiwi|share/doc/%{name}-%{version}|' setup.py
 
+rm requirements.txt
+touch requirements.txt
+rm kiwi_gtk.egg-info/requires.txt
+
 %build
 %{__python} setup.py build
 
