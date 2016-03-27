@@ -6,7 +6,7 @@
 
 Summary: A framework and a set of enhanced widgets based on PyGTK
 Name:    python-kiwi
-Version: 1.9.40
+Version: 1.9.41.post1
 Release: 1
 Source0: https://pypi.python.org/packages/source/k/kiwi-gtk/kiwi-gtk-%{version}.tar.gz
 License: LGPLv2+
