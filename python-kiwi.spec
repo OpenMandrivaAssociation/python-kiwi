@@ -6,9 +6,9 @@
 
 Summary: A framework and a set of enhanced widgets based on PyGTK
 Name:    python-kiwi
-Version: 1.9.41.post1
+Version: 1.10.3
 Release: 1
-Source0: https://pypi.python.org/packages/source/k/kiwi-gtk/kiwi-gtk-%{version}.tar.gz
+Source0: https://github.com/stoq/kiwi/archive/1.10.3.tar.gz?/kiwi-%{version}.tar.gz
 License: LGPLv2+
 Group:   Development/Python
 Url:     http://www.async.com.br/projects/kiwi/
@@ -42,10 +42,10 @@ touch requirements.txt
 rm kiwi_gtk.egg-info/requires.txt
 
 %build
-%{__python2} setup.py build
+python setup.py build
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+python setup.py install -O1 --skip-build --root=%{buildroot}
 rm -rf %{buildroot}%{_defaultdocdir}
 %if %{_lib} != lib
 mkdir -p %{buildroot}%{_libdir}
