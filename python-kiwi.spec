@@ -11,7 +11,7 @@ Release: 1
 Source0: https://pypi.python.org/packages/source/k/kiwi-gtk/kiwi-gtk-%{version}.tar.gz
 License: LGPLv2+
 Group:   Development/Python
-Url:     http://www.async.com.br/projects/kiwi/
+Url:     https://www.async.com.br/projects/kiwi/
 BuildRequires: pkgconfig(python2)
 BuildRequires: pygtk2.0-devel
 BuildRequires: python2-setuptools
